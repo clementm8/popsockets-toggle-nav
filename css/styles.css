@@ -1,0 +1,147 @@
+body {
+    background: linear-gradient(rgb(255, 105, 180), rgb(255, 186, 0));
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inner-container{
+    padding: 0 1rem;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* typography */
+
+h1{
+    letter-spacing: 5px;
+}
+
+h1 a{
+    color: #00263e;
+    text-decoration: none;
+}
+
+
+h1::first-letter{
+    color: rgb(255,105,100);
+}
+
+h2{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* header */
+
+header{
+    background-color: #fff;
+}
+
+.toggle-btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+ul.main-menu svg{
+    width: 1rem;
+}
+
+ul.main-menu svg:last-child{
+    margin-left: auto;
+}
+
+nav{
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    background-color: #fff;
+    width:100vw;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.show-nav{
+    max-height: 50rem;
+}
+
+ul.main-menu a{
+    text-decoration: none;
+    color: #f89d70;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+ul.main-menu li{
+    margin: 0 1.5rem;
+    line-height: 5.3125rem;
+    border-bottom: 1px solid #e3eaf3;
+    white-space: nowrap;
+}
+
+ul.main-menu li:last-of-type{
+    border-bottom: none;
+}
+
+ul.main-menu li:focus-within > ul,
+ul.main-menu li> ul:focus{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+
+@media screen and (min-width: 950px){
+    .toggle-btn{
+        display: none;
+    }
+
+    nav{
+        position: static;
+        width: auto;
+        max-height: 100vh;
+    }
+
+    ul.main-menu{
+        display: flex;
+    }
+
+    ul.main-menu svg:last-child{
+        margin-left: 0;
+    }
+
+    ul.dropdown{
+        position: absolute;
+        background-color: #fff;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    ul.dropdown li{
+        margin: 0;
+    }
+
+    ul.dropdown a{
+        text-align: center;
+        display: block;
+        padding: 0 1rem;
+    }
+
+
+    ul.main-menu li:hover ul.dropdown{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
